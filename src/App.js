@@ -1,24 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Categorie from "./Components/Categorie/Categorie";
+import "./App.scss";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="o-categorie">
+      <div className="o-categorie-title">
+        <h1>Elige una categoria</h1>
+      </div>
+      <div className="o-figures">
+        <div className="o-ellipse">
+          <img src="/figure/Ellipse.svg" alt="" />
+        </div>
+        <div className="o-waves">
+          <img src="/figure/waves.svg" alt="" />
+        </div>
+      </div>
+      <div className="o-categorie-list">
+        <Categorie urlCategorie="/img/action.jpg" categorieTitle="Acción" />
+        <Categorie urlCategorie="/img/arcade.jpg" categorieTitle="Arcade" />
+        <Categorie urlCategorie="/img/sport.jpg" categorieTitle="Deportes" />
+        <Categorie urlCategorie="/img/simulation.jpg" categorieTitle="Simulación" />
+        <Categorie urlCategorie="/img/strategy.jpg" categorieTitle="Estrategia" />
+      </div>
     </div>
   );
 }
