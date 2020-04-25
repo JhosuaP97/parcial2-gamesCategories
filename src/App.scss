@@ -8,7 +8,7 @@ body {
   width: 100vw;
   height: 100vh;
   background: #eeeeee;
-  overflow: hidden;
+  /* overflow: hidden; */
   font-family: 'Montserrat',sans-serif;
   font-style: normal;
   font-weight: bold;
@@ -19,7 +19,6 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
-  display: flex;
   align-content: center;
   justify-content: center;
   margin: 6rem 0;
@@ -54,5 +53,22 @@ body {
     flex-wrap: wrap;
     z-index: 10;
     margin: 1rem;
+
+    button{
+      background: none;
+      border: none;
+    }
+  }
+
+  .o-games{
+    margin: 20rem ;
+    width:960px;
+    height: 10rem;
+    
+    .o-games-row{
+      display: flex;
+      flex-wrap: nowrap;
+    }
+    
   }
 }

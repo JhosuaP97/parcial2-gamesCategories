@@ -1,11 +1,19 @@
-import React, { Component } from 'react'
+import React, {Component} from "react";
+import "./Game.scss"
 
-export default class Game extends Component {
-    render() {
-        return (
-            <div>
-                <h1>Game</h1>
-            </div>
-        )
-    }
-}
+const Game = (props) => {
+  const {imgGame, titleGame,companyGame} = props;
+  return (
+    <div className="o-container-game">
+      <div className="o-game-img">
+        <img src={imgGame} alt="" />
+      </div>
+      <div className="o-game-info">
+        <h3>{titleGame}</h3>
+        <h5>{companyGame}</h5>
+      </div>
+    </div>
+  );
+};
+
+export default Game;
