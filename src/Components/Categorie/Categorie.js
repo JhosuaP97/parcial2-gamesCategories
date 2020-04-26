@@ -1,5 +1,12 @@
 import React from "react";
 import "./Categorie.scss";
+import Proptypes from "prop-types";
+
+/**
+ * 
+ * @param {String} imgCategorie 
+ * @param {String} categorieTitle
+ */
 
 const Categorie = (props) => {
   const {imgCategorie, categorieTitle} = props;
@@ -14,5 +21,10 @@ const Categorie = (props) => {
     </div>
   );
 };
+
+Categorie.prototypes={
+  imgCategorie:Proptypes.string.isRequired,
+  categorieTitle:Proptypes.string.isRequired
+}
 
 export default Categorie;

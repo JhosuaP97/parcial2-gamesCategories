@@ -1,5 +1,13 @@
 import React from "react";
 import "./Game.scss";
+import Proptypes from "prop-types";
+
+/**
+ * 
+ * @param {String} imgGame 
+ * @param {String} titleGame
+ * @param {String} companyGame
+ */
 
 const Game = (props) => {
   const {imgGame, titleGame, companyGame} = props;
@@ -15,5 +23,13 @@ const Game = (props) => {
     </div>
   );
 };
+
+Game.propTypes={
+  imgGame:Proptypes.string.isRequired,
+  titleGame:Proptypes.string.isRequired,
+  companyGame:Proptypes.string.isRequired
+}
+
+
 
 export default Game;

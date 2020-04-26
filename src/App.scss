@@ -13,6 +13,7 @@ body {
   font-style: normal;
   font-weight: bold;
 }
+/* start o-categorie */
 
 .o-categorie {
   display: flex;
@@ -23,6 +24,8 @@ body {
   align-content: center;
   justify-content: center;
   margin: 4rem 0.2rem;
+
+  /* start o-figures */
 
   .o-figures {
     position: absolute;
@@ -39,12 +42,17 @@ body {
       top: 31rem;
     }
   }
+  /* end o-figures */
+
+  /* start o-categorie-title */
 
   .o-categorie-title {
     position: absolute;
     left: 2.5rem;
     top: -1rem;
     color: #250440;
+
+    /* start o-title-game */
 
     .o-title-game {
       display: block;
@@ -84,7 +92,11 @@ body {
         }
       }
     }
+    /* end o-title-game */
   }
+  /* end o-categorie-title */
+
+  /* start o-categorie-list */
 
   .o-categorie-list {
     position: relative;
@@ -104,6 +116,9 @@ body {
       }
     }
   }
+  /* end o-categorie-list */
+
+  /* start o-games */
 
   .o-games {
     margin: 20rem;
@@ -115,42 +130,53 @@ body {
       flex-wrap: wrap;
     }
   }
+  /* end o-games */
 }
+/* end o-categorie */
 
 @media only screen and (max-width: 768px) {
-
-  .o-figures{
-    h1{
-      
+  /* Start o-figures */
+  .o-figures {
+    h1 {
       width: 340px;
     }
-  }
 
-  .o-ellipse, .o-waves{
-    display: none;
+    .o-ellipse,
+    .o-waves {
+      display: none;
+    }
   }
+  /* Start o-figures */
 
-  .o-title-game{
+  /* Start o-title-game */
+
+  .o-title-game {
     width: 27.2rem;
     height: 5rem;
     border: 1px solid;
-    h1{
+    h1 {
       position: absolute;
       margin: 80px;
-      right:33rem;
-      bottom: 10px;      
+      right: 33rem;
+      bottom: 10px;
       font-size: 60px;
     }
 
-    button{
+    button {
       margin: 1px -2rem;
     }
   }
-  
+  /* end o-title-game */
+
+  /* Start o-categorie-list */
+
   .o-categorie-list {
     display: flex;
     flex-wrap: wrap;
   }
+  /* end o-categorie-list */
+  
+  /* start o-games */
 
   .o-games {
     margin: 20rem;
@@ -162,4 +188,6 @@ body {
       flex-wrap: wrap;
     }
   }
+  /* end o-games */
+
 }
