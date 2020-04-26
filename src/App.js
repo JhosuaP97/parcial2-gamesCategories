@@ -1,7 +1,7 @@
 import React, {Component} from "react";
+import {categories} from "./Data";
 import Categorie from "./Components/Categorie/Categorie";
 import "./App.scss";
-
 import Game from "./Components/Game/Game";
 
 class App extends Component {
@@ -10,391 +10,60 @@ class App extends Component {
     this.state = {
       categorieSelected: "",
       isSelected: false,
-      categories: [
-        {
-          url: "/imgCategorie/action.jpg",
-          categorie: "Accion",
-          games: [
-            {
-              urlgame: "/imgGame/action1.jpg",
-              nameGame: "Monster hunter world",
-              companyGame: "CAPCOM",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-          ],
-        },
-        {
-          url: "/imgCategorie/arcade.jpg",
-          categorie: "Arcade",
-          games: [
-            {
-              urlgame: "/imgGame/action1.jpg",
-              nameGame: "Monster hunter world",
-              companyGame: "CAPCOM",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-          ],
-        },
-        {
-          url: "/imgCategorie/sport.jpg",
-          categorie: "Deportes",
-          games: [
-            {
-              urlgame: "/imgGame/action1.jpg",
-              nameGame: "Monster hunter world",
-              companyGame: "CAPCOM",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-          ],
-        },
-        {
-          url: "/imgCategorie/simulation.jpg",
-          categorie: "Simulacion",
-          games: [
-            {
-              urlgame: "/imgGame/action1.jpg",
-              nameGame: "Monster hunter world",
-              companyGame: "CAPCOM",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-          ],
-        },
-        {
-          url: "/imgCategorie/strategy.jpg",
-          categorie: "Estrategia",
-          games: [
-            {
-              urlgame: "/imgGame/action1.jpg",
-              nameGame: "Monster hunter world",
-              companyGame: "CAPCOM",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-            {
-              urlgame: "",
-              nameGame: "",
-              companyGame: "",
-            },
-          ],
-        },
-      ],
+      position: null,
     };
   }
 
-  handlerClick(param) {
+  handlerClick(param, i) {
     this.setState({
       categorieSelected: param,
       isSelected: true,
+      position: i,
     });
-    /* console.log(param, this.state.categorieSelected, this.state.isSelected); */
+  }
+
+  handlerReturn() {
+    this.setState({
+      isSelected: false,
+    });
   }
 
   render() {
+    const {categorieSelected, isSelected, position} = this.state;
     return (
       <div className="o-categorie">
         <div className="o-categorie-title">
-          {!this.state.isSelected ? (
-            <h1>Elige una categoria</h1>
+          {!isSelected ? (
+            <div className="o-figures">
+              <h1>Elige una categoria</h1>
+              <div className="o-ellipse">
+                <img src="/figure/Ellipse.svg" alt="" />
+              </div>
+              <div className="o-waves">
+                <img src="/figure/waves.svg" alt="" />
+              </div>
+            </div>
           ) : (
-            <h1>{this.state.categorieSelected}</h1>
+            <div className="o-title-game">
+              <h1>{categorieSelected}</h1>
+              <button onClick={() => this.handlerReturn()}>
+                <img src="/figure/back.svg" alt="" loading="lazy"></img>
+              </button>
+            </div>
           )}
         </div>
-        <div className="o-figures">
-          <div className="o-ellipse">
-            <img src="/figure/Ellipse.svg" alt="" />
-          </div>
-          <div className="o-waves">
-            <img src="/figure/waves.svg" alt="" />
-          </div>
-        </div>
-
-        {/* <div className="o-games">
-          <div className="o-games-row">
-            <Game
-              imgGame="/imgGame/action1.jpg"
-              titleGame="Monster hunter World"
-              companyGame="CAPCOM"
-            />
-            <Game
-              imgGame="/imgGame/action1.jpg"
-              titleGame="Monster hunter World"
-              companyGame="CAPCOM"
-            />
-          </div>
-          <div className="o-games-row">
-            <Game
-              imgGame="/imgGame/action1.jpg"
-              titleGame="Monster hunter World"
-              companyGame="CAPCOM"
-            />
-            <Game
-              imgGame="/imgGame/action1.jpg"
-              titleGame="Monster hunter World"
-              companyGame="CAPCOM"
-            />
-          </div>
-          <div className="o-games-row">
-            <Game
-              imgGame="/imgGame/action1.jpg"
-              titleGame="Monster hunter World"
-              companyGame="CAPCOM"
-            />
-            <Game
-              imgGame="/imgGame/action1.jpg"
-              titleGame="Monster hunter World"
-              companyGame="CAPCOM"
-            />
-          </div>
-          <div className="o-games-row">
-            <Game
-              imgGame="/imgGame/action1.jpg"
-              titleGame="Monster hunter World"
-              companyGame="CAPCOM"
-            />
-            <Game
-              imgGame="/imgGame/action1.jpg"
-              titleGame="Monster hunter World"
-              companyGame="CAPCOM"
-            />
-          </div>
-          <div className="o-games-row">
-            <Game
-              imgGame="/imgGame/action1.jpg"
-              titleGame="Monster hunter World"
-              companyGame="CAPCOM"
-            />
-            <Game
-              imgGame="/imgGame/action1.jpg"
-              titleGame="Monster hunter World"
-              companyGame="CAPCOM"
-            />
-          </div>
-        </div> */}
 
         <div className="o-categorie-list">
-          {!this.state.isSelected ? (
+          {!isSelected ? (
             <div>
-              {this.state.categories.map((categorie, i) => {
+              {categories.map((categorie, i) => {
                 return (
                   <button
                     key={i}
-                    onClick={() => this.handlerClick(categorie.categorie)}
+                    onClick={() => this.handlerClick(categorie.categorie, i)}
                   >
                     <Categorie
+                      key={i}
                       imgCategorie={categorie.url}
                       categorieTitle={categorie.categorie}
                     />
@@ -404,30 +73,27 @@ class App extends Component {
             </div>
           ) : (
             <div>
-              {this.state.categories.map((categorie, i) => {
-                return (
-                  <div>
-                    {this.state.categorieSelected === categorie.categorie ? (
-                      <div>
-                        {Object.values(categorie).map((game, i) => {
-                          console.log(game[i].urlgame);
-
-                          return (
-                            <div className="o-games">
-                              <div className="o-games-row">
-                                <Game
-                                  imgGame={game[i].urlgame}
-                                  titleGame={game[i].nameGame}
-                                  companyGame={game[i].companyGame}
-                                />
-                              </div>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    ) : null}
-                  </div>
-                );
+              {categories.map((categorie, i) => {
+                if (position === i) {
+                  return (
+                    <div key={i} className="o-games">
+                      {categorieSelected === categorie.categorie ? (
+                        <div key={i} className="o-games-row">
+                          {Object.values(categorie.games).map((game, i) => {
+                            return (
+                              <Game
+                                key={i}
+                                imgGame={game.urlgame}
+                                titleGame={game.nameGame}
+                                companyGame={game.companyGame}
+                              />
+                            );
+                          })}
+                        </div>
+                      ) : null}
+                    </div>
+                  );
+                }
               })}
             </div>
           )}

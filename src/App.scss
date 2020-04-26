@@ -8,8 +8,8 @@ body {
   width: 100vw;
   height: 100vh;
   background: #eeeeee;
-  /* overflow: hidden; */
-  font-family: 'Montserrat',sans-serif;
+  overflow-x: hidden;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: bold;
 }
@@ -17,27 +17,26 @@ body {
 .o-categorie {
   display: flex;
   position: relative;
+  flex-wrap: wrap;
   width: 100%;
   height: 100%;
   align-content: center;
   justify-content: center;
-  margin: 6rem 0;
+  margin: 4rem 0.2rem;
 
   .o-figures {
     position: absolute;
     z-index: -1;
 
     .o-ellipse {
-      display: block;
-      text-align: center;
-      
+      position: relative;
+      left: 65%;
     }
 
-    .o-waves{
-        position: absolute;
-        left: -29rem;
-        top:28rem;
-        
+    .o-waves {
+      position: absolute;
+      left: -3rem;
+      top: 31rem;
     }
   }
 
@@ -46,29 +45,121 @@ body {
     left: 2.5rem;
     top: -1rem;
     color: #250440;
+
+    .o-title-game {
+      display: block;
+      width: 90rem;
+      height: 24rem;
+      position: relative;
+      left: -2rem;
+      text-align: center;
+      border: 1px solid;
+      font-size: 70px;
+      background: rgb(74, 8, 128);
+      h1 {
+        position: relative;
+        top: 80px;
+        color: #ffffff;
+      }
+
+      button {
+        width: 9rem;
+        padding: 10px;
+        position: absolute;
+        top: 10px;
+        left: 40px;
+        color: #ffffff;
+        background: none;
+        border: 2px solid;
+        cursor: pointer;
+        border-radius: 0.12rem;
+        font-size: 10px;
+
+        img {
+          width: 25%;
+        }
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.4);
+        }
+      }
+    }
   }
 
   .o-categorie-list {
+    position: relative;
+    top: 40px;
     display: flex;
     flex-wrap: wrap;
     z-index: 10;
     margin: 1rem;
 
-    button{
+    button {
       background: none;
       border: none;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.05);
+      }
     }
   }
 
-  .o-games{
-    margin: 20rem ;
-    width:960px;
+  .o-games {
+    margin: 20rem;
     height: 10rem;
-    
-    .o-games-row{
+
+    .o-games-row {
+      width: 1440px;
       display: flex;
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
     }
-    
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  .o-figures{
+    h1{
+      
+      width: 340px;
+    }
+  }
+
+  .o-ellipse, .o-waves{
+    display: none;
+  }
+
+  .o-title-game{
+    width: 27.2rem;
+    height: 5rem;
+    border: 1px solid;
+    h1{
+      position: absolute;
+      margin: 80px;
+      right:33rem;
+      bottom: 10px;      
+      font-size: 60px;
+    }
+
+    button{
+      margin: 1px -2rem;
+    }
+  }
+  
+  .o-categorie-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .o-games {
+    margin: 20rem;
+    height: 10rem;
+
+    .o-games-row {
+      width: 144px;
+      display: flex;
+      flex-wrap: wrap;
+    }
   }
 }
