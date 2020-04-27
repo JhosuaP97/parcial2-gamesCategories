@@ -13,7 +13,7 @@ const Categorie = (props) => {
   return (
     <div className="o-container">
       <div className="o-img">
-        <img src={imgCategorie} alt="" loading="lazy"/>
+        <img src={imgCategorie} alt={categorieTitle} loading="lazy"/>
       </div>
       <div className="o-title">
         <h1>{categorieTitle}</h1>

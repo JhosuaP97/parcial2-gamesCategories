@@ -14,7 +14,7 @@ const Game = (props) => {
   return (
     <div className="o-container-game">
       <div className="o-game-img">
-        <img src={imgGame} alt="" loading="lazy"/>
+        <img src={imgGame} alt={titleGame} loading="lazy"/>
       </div>
       <div className="o-game-info">
         <h3>{titleGame}</h3>
