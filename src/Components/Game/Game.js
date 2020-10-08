@@ -9,8 +9,7 @@ import Proptypes from "prop-types";
  * @param {String} companyGame
  */
 
-const Game = (props) => {
-  const {imgGame, titleGame, companyGame} = props;
+const Game = ({imgGame,titleGame,companyGame}) => {
   return (
     <div className="o-container-game">
       <div className="o-game-img">

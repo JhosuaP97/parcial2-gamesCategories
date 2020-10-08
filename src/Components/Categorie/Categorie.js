@@ -8,8 +8,7 @@ import Proptypes from "prop-types";
  * @param {String} categorieTitle
  */
 
-const Categorie = (props) => {
-  const {imgCategorie, categorieTitle} = props;
+const Categorie = ({imgCategorie, categorieTitle}) => {
   return (
     <div className="o-container">
       <div className="o-img">
